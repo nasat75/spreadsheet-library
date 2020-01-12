@@ -8,6 +8,10 @@
       "es2017",
       "es2018"
     ],
+    "types": [
+      "@types/node",
+      "@types/google-apps-script"
+    ],
     "allowJs": true,
     "declaration": false,
     "outDir": "./dist",
