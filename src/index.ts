@@ -1,12 +1,8 @@
 // import './app'
-import {getUpdatedCalander, getTitleName, getISBN, generateURL, throwAPI} from './app'
+import {getTitleName, getISBN, generateURL, throwAPI} from './app'
 
 declare const global: {
   [x: string]: any
-}
-
-global.getUpdatedCalander = (e: any) => {
-  return getUpdatedCalander(e)
 }
 
 global.getTitleName = () => {
@@ -14,15 +10,15 @@ global.getTitleName = () => {
 }
 
 global.getISBN = (title: string) => {
-  return getISBN()
+  return getISBN(title)
 }
 
 global.generateURL = (searchType: string, args: string) => {
-  return generateURL()
+  return generateURL(searchType, args)
 }
 
-global.throwAPI(apiUrl: string) => {
-  return throwAPI()
+global.throwAPI = (apiUrl: string) => {
+  return throwAPI(apiUrl)
 }
 
 

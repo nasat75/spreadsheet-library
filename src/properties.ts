@@ -1,16 +1,16 @@
 export class Properties {
-  private property: any;
+  public properties: any;
   constructor() {
-    this.property = PropertiesService.getScriptProperties();
+    this.properties = PropertiesService.getScriptProperties();
   }
 
   public getKey = (key: string): string => {
-    return this.property.getProperty(key);
+    return this.properties.getProperty(key);
   };
 
   public setKey = (key: string, val: string): void => {
     try {
-      this.property.setProperty(key, val);
+      this.properties.setProperty(key, val);
     } catch (e) {
       console.log(`ERROR => ${e}`);
     }
@@ -18,7 +18,7 @@ export class Properties {
 
   public remove = (key: string): void => {
     try {
-      this.property.deleteProperty(key);
+      this.properties.deleteProperty(key);
     } catch (e) {
       console.log(`ERROR => ${e}`);
     }
