@@ -1,5 +1,5 @@
 export class Properties {
-  public properties: any;
+  private properties: any;
   constructor() {
     this.properties = PropertiesService.getScriptProperties();
   }
