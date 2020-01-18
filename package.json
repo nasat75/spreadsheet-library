@@ -10,7 +10,8 @@
     "clasp": "./node_modules/.bin/clasp",
     "build": "webpack",
     "deploy": "npm run build && ./node_modules/.bin/clasp push -f",
-    "watch": "watch 'npm run deploy' ./src"
+    "watch": "watch 'npm run deploy' ./src",
+    "babel": "./node_modules/.bin/babel"
   },
   "keywords": [],
   "author": "",

@@ -1,30 +1,38 @@
-export class sheet {
+import { Properties } from './Properties';
+export class Sheet {
   private spreadsheet: any;
   private sheet: any;
-  constructor() {
-    this.spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    this.sheet = this.spreadsheet.getActiveSheet();
-  }
+  private ISBN_COLUMN: number;
+  private TITLE_COLUMN: number;
+  private properties: any;
 
+  constructor() {
+    this.properties = new Properties();
+    this.spreadsheet = this.properties.getKey('SPREADSHEET_ID');
+    this.sheet = this.spreadsheet.getSheet();
+    this.ISBN_COLUMN = 6;
+    this.TITLE_COLUMN = 2;
+  }
   public getSpreadsheet() {
     return this.spreadsheet;
   }
-
   public getSheet() {
     return this.sheet;
   }
-
-//   public getTitleName(): string {
   public getTitleName = (): string => {
-    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    // if (spreadsheet === null) return null
-    const sheet = spreadsheet.getActiveSheet();
-    // column => e.g. `B:$row`
-    const row = sheet.getActiveRange();
+    const row = this.sheet.getActiveRange();
     const title = "";
     if (typeof row !== "number") return "";
-    sheet.getRange(row, 2);
+    this.sheet.getRange(row, this.TITLE_COLUMN);
     console.log(title);
     return title;
-  }
+  };
+  public getISBN = (): string => {
+    const row = this.sheet.getActiveRange();
+    const isbn = "";
+    if (typeof row !== "number") return "";
+    this.sheet.getRange(row, this.ISBN_COLUMN);
+    console.log(isbn);
+    return isbn;
+  };
 }
