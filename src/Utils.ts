@@ -1,6 +1,6 @@
 import { Properties } from "./Properties";
 
-export class api_utils {
+export class Utils {
   private props: any;
   constructor() {
     this.props = new Properties();

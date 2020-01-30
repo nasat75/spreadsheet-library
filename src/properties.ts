@@ -1,24 +1,21 @@
 export class Properties {
-  private properties: any;
+  private _properties: any;
   constructor() {
-    this.properties = PropertiesService.getScriptProperties();
+    this._properties = PropertiesService.getScriptProperties();
   }
-
-  public getKey = (key: string): string => {
-    return this.properties.getProperty(key);
-  };
-
-  public setKey = (key: string, val: string): void => {
+  get key(private key: string) {
+    return this._properties.getProperty(key);
+  }
+  set key(private key: string, val: string) {
     try {
-      this.properties.setProperty(key, val);
+      this._properties.setProperty(key, val);
     } catch (e) {
       console.log(`ERROR => ${e}`);
     }
-  };
-
+  }
   public remove = (key: string): void => {
     try {
-      this.properties.deleteProperty(key);
+      this._properties.deleteProperty(key);
     } catch (e) {
       console.log(`ERROR => ${e}`);
     }

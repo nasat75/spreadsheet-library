@@ -19,7 +19,7 @@ export class Sheet {
   public getSheet() {
     return this.sheet;
   }
-  public getTitleName = (): string => {
+  public getTitle = (): string => {
     const row = this.sheet.getActiveRange();
     const title = "";
     if (typeof row !== "number") return "";

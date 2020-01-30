@@ -1,5 +1,5 @@
 // import './app'
-import {getBookInfo} from './app'
+import {getBookInfo} from './Main'
 
 declare const global: {
   [x: string]: any
