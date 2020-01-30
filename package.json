@@ -5,27 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/app.ts",
-    "lint:fix": "eslint --fix src/app.ts",
+    "lint": "eslint src/Main.ts",
+    "lint:fix": "eslint --fix src/Main.ts",
     "clasp": "./node_modules/.bin/clasp",
-    "build": "webpack",
-    "deploy": "npm run build && ./node_modules/.bin/clasp push -f",
-    "watch": "watch 'npm run deploy' ./src"
+    "deploy": "./node_modules/.bin/clasp push -f",
+    "watch": "watch 'npm run deploy' ./src",
+    "gcz": "git commit -m "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.8.0",
-    "@babel/preset-env": "^7.8.0",
-    "@babel/preset-typescript": "^7.8.0",
     "@google/clasp": "^2.3.0",
     "@types/google-apps-script": "^1.0.9",
     "@types/node": "^13.1.6",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
-    "babel-loader": "^8.0.6",
-    "es3ify-webpack-plugin": "^0.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-config-standard": "^14.1.0",
@@ -34,13 +29,9 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "gas-webpack-plugin": "^1.0.2",
+    "git-cz": "^4.2.0",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.4",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^3.7.4"
   },
-  "dependencies": {
-    "node-gyp": "^6.1.0"
-  }
+  "dependencies": {}
 }
